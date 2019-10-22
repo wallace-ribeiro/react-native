@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'black',
-    borderWidth: '2px',
-    maxHeight: '210px',
-    maxWidth: '214px'
+    borderWidth: 2,
+    maxHeight: 210,
+    maxWidth: 214
   },
   row: {
     flex: 1,
@@ -33,22 +33,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    maxHeight: '35px',
+    maxHeight: 35,
   },
   blackPiece: {
     flex: 1,
     backgroundColor: '#000000',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '35px',
-    width: '35px'
+    height: 35,
+    width: 35
   },
   whitePiece: {
     flex: 1,
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '35px',
-    width: '35px'
+    height: 35,
+    width: 35
   }
 });

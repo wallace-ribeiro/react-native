@@ -8,9 +8,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         {  i.map((j) => 
-             (<Text>OLaH mundo! {j}</Text>)
-	   )
-	}
+             (<Text key={j}>OLaH mundo! {j}</Text>))
+        }
         <Button title="Pressione"/>
       </View>
     );

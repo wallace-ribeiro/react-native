@@ -10,36 +10,36 @@ class ListaMensagens extends Component {
   }
   
   render() {
-    return (<View style={styles.text}>
-          <ScrollView>
-            <View style={styles.list}>
-              {this.props.textos.map((texto, index) => (<Text key={index}>{texto}</Text>))}
-            </View>
-          </ScrollView>
-        </View>)
+    return (
+      <View style={styles.text}>
+        <ScrollView>
+          <View style={styles.list}>
+              {this.props.texts.map((text, index) => (<Text key={index}>{text}</Text>))}
+          </View>
+        </ScrollView>
+      </View>)
   }
 }
 export default class App extends Component {
   
-  state = {textos: [], currentText: ''}
+  state = {texts: [], currentText: ''}
   render() {
     return (
-      
       <View style={styles.container}>
-        <ListaMensagens textos={this.state.textos}/>
+        <ListaMensagens texts={this.state.texts}/>
         <View style={styles.insertion}>
-        <TextInput
-          placeholder="Escreva aqui"
-          onChangeText={(text) => this.setState({currentText: text})}
-          value={this.state.currentText}
-        />
-        <Button title="Add" onPress={() => { 
-	  let textos = this.state.textos
-	  textos.push(this.state.currentText)
-	  this.setState({textos: textos})
-	  
-	}}></Button>
-	</View>
+          <TextInput
+            placeholder="Escreva aqui"
+            onChangeText={(text) => this.setState({currentText: text})}
+            value={this.state.currentText}
+          />
+          <Button title="Add" onPress={() => { 
+	            let texts = this.state.texts
+	            texts.push(this.state.currentText)
+	            this.setState({texts: texts})	  
+	          }}>
+          </Button>
+      	</View>
       </View>
     );
   }
@@ -53,18 +53,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   insertion: {
-	      flex: 2,
-	      maxHeight: '200px'
-	    }
-	    ,
+    flex: 2,
+	  maxHeight: 200
+	},
   text: {
-	      flex: 3,
-	      maxHeight: '500px',
-	      width: '80%'
-	    },
-   list: {
-     flex: 4,
-     width: '80%'
-     
+    flex: 3,
+      maxHeight: 500,
+	  width: '80%'
+	},
+  list: {
+    flex: 4,
+    width: '80%' 
   }
 });

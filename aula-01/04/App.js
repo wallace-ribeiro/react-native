@@ -3,17 +3,17 @@ import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
 
 export default class App extends Component {
   
-  state = {texto: '', currentText: ''}
+  state = {text: '', currentText: ''}
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.texto}</Text>
+        <Text>{this.state.text}</Text>
         <TextInput
           placeholder="Escreva aqui"
           onChangeText={(text) => this.setState({currentText: text})}
           value={this.state.currentText}
         />
-        <Button title="Add" onPress={() => this.setState({texto: this.state.currentText})}></Button>
+        <Button title="Add" onPress={() => this.setState({text: this.state.currentText})}></Button>
       </View>
     );
   }

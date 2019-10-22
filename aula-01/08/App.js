@@ -11,22 +11,23 @@ class ListaMensagens extends Component {
   
   
   render() {
-    return (<View style={styles.text}>
-          <ScrollView>
-            <View style={styles.list}>
-              {this.props.textos.map(({mensagem}, index) => (<Text key={index}>{mensagem.name}: {mensagem.msg}</Text>))}
-            </View>
-          </ScrollView>
-        </View>)
+    return (
+      <View style={styles.text}>
+        <ScrollView>
+          <View style={styles.list}>
+            {this.props.texts.map(({mensagem}, index) => (<Text key={index}>{mensagem.name}: {mensagem.msg}</Text>))}
+          </View>
+        </ScrollView>
+      </View>)
   }
 }
 export default class App extends Component {
   
-  state = {textos: [], currentText: '', nome: ''}
+  state = {texts: [], currentText: '', nome: ''}
   
   componentDidMount() {
     fetch('http://104.248.235.252:3005/api/mensagens/10').then( (response) => response.json()).then((responseJson) => {
-	     this.setState({textos: responseJson})
+	     this.setState({texts: responseJson})
    })
   }
   
@@ -39,37 +40,37 @@ export default class App extends Component {
       },
       body: JSON.stringify({msg: {msg: this.state.currentText, name: this.state.nome}}),
     }).then(() => {
-      fetch('http://104.248.235.252:3005/api/mensagens/since/'+(this.state.textos.length > 0 ? this.state.textos[this.state.textos.length -1].id : 0)).then( (response) => response.json()).then((responseJson) => {
+      fetch('http://104.248.235.252:3005/api/mensagens/since/'+(this.state.texts.length > 0 ? this.state.texts[this.state.texts.length -1].id : 0)).then( (response) => response.json()).then((responseJson) => {
              console.log('response: ',responseJson);
-	     let textos = this.state.textos
-	     responseJson.forEach((msg) => textos.push(msg))
-	     this.setState({textos: textos})
+	     let texts = this.state.texts
+	     responseJson.forEach((msg) => texts.push(msg))
+	     this.setState({texts: texts})
       })
     })
   }
   
   render() {
-    console.log('this.state.textos: ',this.state.textos);
     return (
-      
       <View style={styles.container}>
-        <ListaMensagens textos={this.state.textos}/>
+        <ListaMensagens texts={this.state.texts}/>
         <View style={styles.insertion}>
-        <TextInput
-          placeholder="Seu nome ..."
-          onChangeText={(text) => this.setState({nome: text})}
-          value={this.state.nome}
-        />
-        <TextInput
-          placeholder="Escreva aqui"
-          onChangeText={(text) => this.setState({currentText: text})}
-          value={this.state.currentText}
-        />
-        <Button title="Add" onPress={() => { 
-	  this.insertNewMessage()
+          <TextInput
+            placeholder="Seu nome ..."
+            onChangeText={(text) => this.setState({nome: text})}
+            value={this.state.nome}
+          />
+          <TextInput
+            placeholder="Escreva aqui"
+            onChangeText={(text) => this.setState({currentText: text})}
+            value={this.state.currentText}
+          />
+          <Button title="Add" onPress={() => { 
+	          this.insertNewMessage()
 	  
-	}}></Button>
-	</View>
+         	  }}
+          >
+          </Button>
+	      </View>
       </View>
     );
   }
@@ -83,18 +84,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   insertion: {
-	      flex: 2,
-	      maxHeight: '200px'
-	    }
-	    ,
+	  flex: 2,
+	  maxHeight: 200
+	},
   text: {
-	      flex: 3,
-	      maxHeight: '500px',
-	      width: '80%'
-	    },
+	  flex: 3,
+	  maxHeight: 500,
+	  width: '80%'
+	},
    list: {
      flex: 4,
      width: '80%'
-     
   }
 });
