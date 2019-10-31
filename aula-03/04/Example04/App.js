@@ -68,5 +68,6 @@ const styles = StyleSheet.create({
   }
 });
 
+//para instalar o viewpager use o comando: yarn add @react-native-community/viewpager
 //orientation: horizontal, vertical
 //transitionStyle: scroll, curl
