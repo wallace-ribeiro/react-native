@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet,  View, TouchableHighlight, TextInput } from 'react-native';
 
 export default class App extends Component {
   
@@ -10,13 +10,34 @@ export default class App extends Component {
     ['white', 'black', 'white', 'black', 'white', 'black'],
     ['black', 'white', 'black', 'white', 'black', 'white']
   ]}
+
+  clique(i, j) {
+    console.log(this.state)
+    let tabuleiro = this.state.tabuleiro
+    tabuleiro[i][j] = this.state.cor
+    this.setState({tabuleiro: tabuleiro})
+  }
+
   render() {
+
+    
     return (
       <View style={styles.container}>
-        {  this.state.tabuleiro.map((linha, i) => (<View key={i} style={styles.row}>{
-             linha.map((cor, j) => (<View key={`${i}_${j}`} style={[styles.piece, {backgroundColor: cor}]}/>))}
-	   </View>))
-	}
+        {  this.state.tabuleiro.map((linha, i) => 
+            (<View key={i} style={styles.row}>{
+               linha.map((cor, j) => (<TouchableHighlight 
+               onPress={() => this.clique(i, j)} 
+
+               style={[styles.piece, {backgroundColor: cor}]} key={`${i}_${j}_touch`}>
+                 <View key={`${i}_${j}`} style={[styles.piece, {backgroundColor: cor}]}/
+                 ></TouchableHighlight>))}
+	           </View>))
+  }
+      <TextInput 
+        placeholder="Escreva aqui"
+        onChangeText={(text) => this.setState({cor: text})}
+        value={this.state.cor}
+      ></TextInput>
       </View>
     );
   }
