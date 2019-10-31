@@ -32,3 +32,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   }
 });
+
+//para instalar o Slider use no projeto o seguinte comando: yarn add @react-native-community/slider
