@@ -30,3 +30,12 @@ export default class App extends Component {
     );
   }
 }
+      
+/*
+Para instalar os componentes para usar a navegacao em tabs, use os seguintes comandos:
+npm install --save react-navigation
+yarn add react-native-gesture-handler
+yarn add react-navigation-tabs
+yarn add react-native-reanimated
+yarn add react-native-screens
+*/
