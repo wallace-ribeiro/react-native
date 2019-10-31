@@ -29,3 +29,12 @@ export default class App extends Component {
     );
   }
 }
+      
+/* para instalar os componentes para navegacao via pilha, use os seguintes comandos:
+npm install --save react-navigation
+yarn add react-native-gesture-handler
+yarn add react-navigation-stack
+yarn add react-native-reanimated
+yarn add react-native-screens
+
+  */    
