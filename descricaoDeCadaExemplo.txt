@@ -1,0 +1,60 @@
+ 
+aula-01
+01 - Exemplos usando os elementos Text, View e Button.
+02 - Exemplo mostrando um tabuleiro preto e branco usando View.
+03 - Exemplo de um contador usando o state. Usa Text, View e Button
+04 - Exemplo do uso do TextInput. Usa View e Button.
+05 - Exemplo do uso do ScrollView. Usa Text, TextInput, View e Button.
+06 - Exemplo do uso do TouchableHighlight e Image. Usa tambem ScrollView, Text, TextInput, View, Button.
+07 - Exemplo do uso de criacao de componentes proprios e seu uso em outros componentes.
+Tambem mostra o uso do Picker.
+08 - Exemplo de um chat simples sendo implementado usando o fetch acessando apis externas.
+
+aula-02
+01 - Exemplo do uso do async-storage, ou seja poder persistir dados dentro do dispositivo e poder
+recupera-los depois.
+02 - Exemplo do uso do ImageBackground.
+03 - Exemplo do uso do Dimensions.
+04 - Exemplo do uso do Alert.
+05 - Exemplo do uso do ProgressBarAndroid.
+06 - Exemplo do uso do StatusBar.
+07 - Exemplo do uso do RefreshControl.
+08 - Exemplo do uso do FlatList.
+09 - Exemplo do uso do SectionList.
+
+aula-03
+01 - Exemplo do uso do Slider.
+02 - Exemplo do uso do Switch.
+03 - Exemplo do uso do DrawerLayoutAndroid.
+04 - Exemplo do uso do ViewPager.
+05 - Exemplo do uso do react-navigation, mais especificamente a navegacao em pilha (react-navigation-stack)
+06 - Exemplo do uso do react-navigation, mais especificamente a navegacao em tabs (react-navigation-tabs)
+
+aula-04
+Aula dedicada ao uso do flexbox
+01 - Simulacao de uma tela do EasyTaxi, uso do flexbox para desenhar uma tela parecida.
+02 - Simulacao de um aplicativo de conteudo stream.
+
+aula-05
+01 - Exemplo do uso de gestures. Exemplos de uso das funcoes onStartShouldSetResponder, 
+onMoveShouldSetResponder, onResponderMove e onResponderRelease. Movimentacao de elementos na tela
+(drag and drop).
+02 - Exemplo do uso do gesture. Neste caso os elementos se movimentam atraves de um toque. Exemplos de uso das funcoes onStartShouldSetResponder, 
+onMoveShouldSetResponder, onResponderMove e onResponderRelease. Exemplo de como usar
+o Vibration para fazer o dispositivo vibrar.
+03 - Exemplo do uso de gesture, simulando uma tela de pintura. Os gestos sobre a tela "pintam"
+a tela.
+
+aula-06
+Aula de animacoes
+01 - Animacoes. Uso do Animated.timing, ou seja movimentar um Animated.Value de um valor ate outro
+em um determinado tempo.
+02 - Animacoes. Uso do Animated.spring, a movimentacao de um valor se comporta como uma mola.
+Para tal variaveis de tensao e friccao (tension e friction) devem ser preenchidas.
+03 - Animacoes. Uso do Animated.decay, onde valores finais nao sao definidos, e apenas definido
+uma velocidade e uma desacerelacao e um valor final e alcancado atraves de uma formula fisica.
+04 - Um exemplo de uma animacao de rotacao.
+05 - Um exemplo de animacao de movimentacao de elementos atraves de gestures, mas usando os valores
+Animated.Value em vez de modificacao de estados.
+06 - Um exemplo de animacao com resize e rotacao.
+
