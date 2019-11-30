@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   onSubmit = (text) => {
-      api.insertNewMessage(text, this.state.name)
+    return api.insertNewMessage(text, this.state.name)
   }
 
   render() {

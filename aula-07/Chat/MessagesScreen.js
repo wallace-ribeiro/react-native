@@ -41,7 +41,7 @@ class MessagesScreen extends Component {
             msg={item.mensagem.msg} 
           />
         )}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
       />
     </View>)
   }
