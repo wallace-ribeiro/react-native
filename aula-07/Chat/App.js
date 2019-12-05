@@ -15,14 +15,14 @@ class App extends Component {
 
   componentDidMount() {
     api.getLastMessages().then((messages) => {
-      this.setState({messages: messages.filter((message) => !message.mensagem.private)})
+      this.setState({messages: messages.filter((message) => message.mensagem && !message.mensagem.private)})
     })
     setInterval(() => {
       let messages = this.state.messages
       let id = messages.length > 0 ? messages[messages.length - 1].id : 0;
       api.getMessagesSince(id).then((newMessages) => {
         newMessages.forEach((message) => {
-          if(!message.mensagem.private)
+          if(message.mensagem && !message.mensagem.private)
               messages.push(message)
         })
         this.setState({messages: messages})
