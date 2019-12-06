@@ -31,10 +31,34 @@ class MessagesScreen extends Component {
   constructor(props) {
     super(props)
   }
+
+  state = {bottom: false}
   render() {
     return (<View>
       <FlatList
+        ref={"flatList"}
         data={this.props.messages}
+        onScroll={(e) => {
+          
+          let bottom = e.nativeEvent.contentSize.height ==
+           e.nativeEvent.layoutMeasurement.height + 
+          e.nativeEvent.contentOffset.y
+          console.log('bottom: ',bottom)
+          if(this.state.bottom != bottom)
+            this.setState({bottom: bottom})
+        }}
+
+        onLayout={() => {
+          console.log('onLayout change')
+          if(this.state.bottom)
+            this.refs.flatList.scrollToEnd()
+        }}
+
+        onContentSizeChange={() => {
+          if(this.state.bottom)
+            this.refs.flatList.scrollToEnd()
+        }}
+
         renderItem={({ item }) => (
           <Message
             name={item.mensagem.name}

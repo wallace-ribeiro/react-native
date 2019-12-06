@@ -12,6 +12,7 @@ class InputScreen extends Component {
         return(<View style={styles.container}>
            <View style={styles.input}>
              <TextInput
+              
               placeholder="Mensagem ..."
               onChangeText={(text) => this.setState({currentText: text})}
               value={this.state.currentText}
